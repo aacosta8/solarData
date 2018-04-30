@@ -17,14 +17,14 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: localhost
-  port: 5432
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
+  host: localhost
+  port: 5432
   database: solarData_development
   username: alex
   password: 32205045
@@ -85,6 +85,6 @@ test:
 #
 production:
   <<: *default
-  database: solarData_production  
+  database: solarData_production
   username: solarData
   password: <%= ENV['SOLARDATA_DATABASE_PASSWORD'] %>
