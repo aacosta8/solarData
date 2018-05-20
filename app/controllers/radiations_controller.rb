@@ -29,8 +29,8 @@ class RadiationsController < ApplicationController
     end_date = Date.strptime(calcular_params[:end_date], "%m/%d/%Y")
     rad = Radiation.created_between_est(start, end_date,1)
     sum = 0
-    rad.each { |r| sum += r.radiation_value.to_f*15}
-    @energia = (sum*calcular_params[:area].to_f*0.15).to_i/100  
+    rad.each { |r| sum += r.radiation_value.to_f*15/60}
+    @energia = ((sum*calcular_params[:area].to_f*0.2))/1000.to_i
   end
 
   # GET /radiations/1
