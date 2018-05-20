@@ -1,9 +1,9 @@
 # Radiación Solar Valle Del Aburrá - YAMLP
 
 Integrantes: 
-Alexander Acosta Jiménez
-Juan Fernando Rincón Cardeño
-Esteban Salazar Montoya
+Alexander Acosta Jiménez,
+Juan Fernando Rincón Cardeño,
+Esteban Salazar Montoya.
 
 # Desplegar la aplicación Local
 
