@@ -1,0 +1,51 @@
+<%= include_gon %>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable(gon.date);
+
+        var options = {
+          title: 'Comportamiento de la radiación',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+
+<p id="notice"><%= notice %></p>
+
+<div class="clearfix"></div>
+<div class="w3layouts-clients">
+  <div class="container"></div>
+</div>
+  <div class="container">
+    <h2 class="w3ls_head">Pre<span>diciones</span></h2>
+      <div id="curve_chart" style="width:auto; height: 500px"></div>
+  </div>
+
+  <div class="stats" id="stats">
+    <div class="container shadowbox1">
+      <div class="stats-info">
+
+        <div class="col-md-4 col-sm-4 stats-grid slideanim">
+          <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='<%=@energia%>' data-delay='.9' data-increment=<%=@energia%>/100+1><%=@energia%></div>
+          <h4 class="stats-info">Energia esperada en kW</h4>
+        </div>
+
+        <div class="col-md-4 col-sm-4 stats-grid slideanim">
+          <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='<%=@avrWH%>' data-delay='.9' data-increment="1"><%=@avrWH%></div>
+          <h4 class="stats-info">Energia esperada en Wh</h4>
+        </div>
+
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>

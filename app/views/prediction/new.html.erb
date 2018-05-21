@@ -1,0 +1,89 @@
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker5').datetimepicker();
+    });
+    $(function () {
+        $('#datetimepicker6').datetimepicker();
+    });
+</script>
+
+<p id="notice"><%= notice %></p>
+
+<div class="clearfix"></div>
+<div class="w3layouts-clients">
+  <div class="container"></div>
+</div>
+
+<div style="float:right">
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">¿Cómo usar?</button>
+</div>
+
+  <div class="container">
+    <h2 class="w3ls_head">Pre<span>diciones</span></h2>
+  </div>
+
+
+<form action="/prediction/predict">
+
+  <div class="container shadowbox">
+
+
+    <label for="lname">Área del panel m<sup>2</sup></label>
+    <input type="text"  name="area">
+
+    <label for="lname">Rendimiento del panel</label>
+    <input type="text"  name="rendimiento">
+
+    <label for="lname">Desde</label>
+    <div class="form-group">
+    <div class='input-group date' id='datetimepicker5'>
+        <input type='text' class="form-control" name="start_date"/>
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+    </div>
+    </div>
+
+
+    <label for="lname">Hasta</label>
+    <div class="form-group">
+    <div class='input-group date' id='datetimepicker6'>
+        <input type='text' class="form-control" name="end_date"/>
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+    </div>
+    </div>
+
+    <input type="submit" value="Calcular" class="btn">
+
+  </div>
+
+</form>
+
+<div class="container">
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Módulo de Predicción</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

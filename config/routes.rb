@@ -1,15 +1,16 @@
 # Rails.application.reload_routes!
 Rails.application.routes.draw do
+
+  get '/prediction' => 'prediction#new'
+  get 'prediction/predict'
+
   root to: 'welcome#index'
 
   get '/'  => 'welcome#index'
   get '/index' => 'welcome#index'
   get '/about' => 'welcome#about'
   get '/contact' => 'welcome#index'
-  get '/icons' => 'welcome#index'
-  get '/products' => 'welcome#index'
-  get '/services' => 'welcome#index'
-  get '/typo' => 'welcome#index'
+
 
   get 'graphics/show'
 

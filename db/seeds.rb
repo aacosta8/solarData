@@ -43,3 +43,39 @@ csv.each do |row|
   rad.save
   puts row.to_hash
 end
+
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'mins6001.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|
+  rad = Radiation.new
+  rad.station = 1
+  rad.name = "no_name"
+  rad.rad_time = row["date"]
+  rad.radiation_value = row["radiation"]
+  rad.save
+  puts row.to_hash
+end
+
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'mins6002.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|
+  rad = Radiation.new
+  rad.station = 2
+  rad.name = "no_name"
+  rad.rad_time = row["date"]
+  rad.radiation_value = row["radiation"]
+  rad.save
+  puts row.to_hash
+end
+
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'mins6003.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|
+  rad = Radiation.new
+  rad.station = 3
+  rad.name = "no_name"
+  rad.rad_time = row["date"].to_datetime.utc
+  rad.radiation_value = row["radiation"]
+  rad.save
+  puts row.to_hash
+end
