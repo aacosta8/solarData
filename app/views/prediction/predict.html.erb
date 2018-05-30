@@ -37,12 +37,17 @@
 
         <div class="col-md-4 col-sm-4 stats-grid slideanim">
           <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='<%=@energia%>' data-delay='.9' data-increment=<%=@energia%>/100+1><%=@energia%></div>
-          <h4 class="stats-info">Energia esperada en kW</h4>
+          <h4 class="stats-info">Energia esperada en kWh</h4>
         </div>
 
         <div class="col-md-4 col-sm-4 stats-grid slideanim">
-          <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='<%=@avrWH%>' data-delay='.9' data-increment="1"><%=@avrWH%></div>
-          <h4 class="stats-info">Energia esperada en Wh</h4>
+          <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='<%=@dias%>' data-delay='.9' data-increment="1"><%=@dias%></div>
+          <h4 class="stats-info">Dias</h4>
+        </div>
+
+        <div class="col-md-4 col-sm-4 stats-grid slideanim">
+          <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='<%=@avrDia%>' data-delay='.9' data-increment="1"><%=@avrDia%></div>
+          <h4 class="stats-info">Promedio energia en dias (kWh/dia)</h4>
         </div>
 
         <div class="clearfix"></div>
